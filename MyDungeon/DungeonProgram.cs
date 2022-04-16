@@ -10,9 +10,10 @@ namespace MyDungeon
     {
         static void Main(string[] args)
         {
-            Console.Title = "U..somethingF..somethingO..something";
+            Console.Title = "Elden Ring";
 
-            Console.WriteLine("Lights flash before your eyes. As you slowing awaken, head pounding, you try to rise to your feet.\nMind foggy, you recall brief events before awaking...You remember being attacked and defensless then black...\nYou look down at your body and see that your armor is still in tact. \"Barely a scratch, where am I?\" \nOnce you regain your senses you check your vitals, shields, and life support.\n\"Everything seems good...Now time to find my way out of here...\"");
+            Console.WriteLine("You rise from your grave and await your destiny...\n");
+            Console.WriteLine("Character Creation:\n");
             //TODO 1.Create Player & Weapon
             //2.Create a loop for the game
             bool exit = false;
@@ -20,7 +21,7 @@ namespace MyDungeon
             do
             {
                 //TODO 3.Create Rooms - making a method to generate a room description
-                Console.WriteLine("You have entered { } room\n");
+                Console.WriteLine("Once you grab your armor and weapon of choice, you exit the\n cave that your grave was inside, and find your first boss\n");
                 Console.WriteLine(GetRoom());
 
                 //TODO 4.Create a Monster
@@ -32,10 +33,10 @@ namespace MyDungeon
                     // 6.Provide the user with a menu of options
                     Console.WriteLine("\nPlease select an action\n" +
                         "A) Attack\n" +
-                        "R) Run Away\n" +
-                        "P) Player Info\n" +
-                        "M) Monster Info\n" +
-                        "X) Exit\n");
+                        "R) Flee\n" +
+                        "P) Player Stats\n" +
+                        "M) Monster Stats\n" +
+                        "X) Exit Game\n");
                     //7.Catch the user's choice
                     ConsoleKey userChoice = Console.ReadKey(true).Key;
 
@@ -47,20 +48,20 @@ namespace MyDungeon
                             //TODO 9. Handle the combat logic & what happens if the player wins
                             break;
                         case ConsoleKey.R:
-                            Console.WriteLine("Running Away!");
+                            Console.WriteLine("Flee!");
                             //TODO 10. Handle the user running away & the monster getting a free attack
                             break;
                         case ConsoleKey.P:
-                            Console.WriteLine("Player Info");
+                            Console.WriteLine("Player Stats:");
                             //TODO 11. Print out player info
                             break;
                         case ConsoleKey.M:
-                            Console.WriteLine("Monster Info");
+                            Console.WriteLine("Boss Stats:");
                             //TODO 12. Print out monster info
                             break;
                         case ConsoleKey.X:
                         case ConsoleKey.E:
-                            Console.WriteLine("Exiting Game");
+                            Console.WriteLine("Saving Game............Exiting Game");
                             exit = true;
                             break;
                         default:
@@ -84,17 +85,17 @@ namespace MyDungeon
         private static string GetRoom()
         {
             string[] rooms =
-            {
-                "Example",
-                "Example",
-                "Example",
-                "Example",
-                "Example",
-                "Example",
-                "Example",
-                "Example",
-                "Example",
-                "Example",
+            {//TODO ADD DESCRIPTIONS FOR ROOMS!
+                "BossRoom1",
+                "BossRoom2",
+                "BossRoom3",
+                "BossRoom4",
+                "BossRoom5",
+                "BossRoom6",
+                "BossRoom7",
+                "BossRoom8",
+                "BossRoom9",
+                "BossRoom10",
             };
             Random rand = new Random();
             int indexNbr = rand.Next(rooms.Length);
